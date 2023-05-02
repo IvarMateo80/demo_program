@@ -52,28 +52,27 @@ class Game:
             self.circle_y = self.screen_width // 2
             self.circle_x_factor = 0
             self.circle_y_factor = 0
-            
         
 
     def draw_circle(self):
-        user_input = pygame.key.get_pressed()
-        if user_input[pygame.K_SPACE]:
-            self.circle_x = self.screen_height // 2
-            self.circle_y = self.screen_width // 2
-            self.circle_x_factor = 0
-            self.circle_y_factor = 0
+        #user_input = pygame.key.get_pressed()
+        #if user_input[pygame.K_SPACE]:
+            #self.circle_x = self.screen_height // 2
+            #self.circle_y = self.screen_width // 2
+            #self.circle_x_factor = 0
+            #self.circle_y_factor = 0
         #move the circle before drwaing it
-        else:
-            self.circle_x += self.circle_x_factor
-            self.circle_y += self.circle_y_factor
+        #else:
+        self.circle_x += self.circle_x_factor
+        self.circle_y += self.circle_y_factor
 
         #verify if circle i inside the screen limits (top, button, left, rigth)
         #and make decision to avoid falling outside the limits
-            if self.circle_x - self.circle_radius < 0 or self.circle_x + self.circle_radius > self.screen_width:
-                self.circle_x_factor = -self.circle_x_factor
+        if self.circle_x - self.circle_radius < 0 or self.circle_x + self.circle_radius > self.screen_width:
+            self.circle_x_factor = -self.circle_x_factor
 
-            if self.circle_y - self.circle_radius < 0 or self.circle_y + self.circle_radius > self.screen_height:
-                self.circle_y_factor = -self.circle_y_factor
+        if self.circle_y - self.circle_radius < 0 or self.circle_y + self.circle_radius > self.screen_height:
+            self.circle_y_factor = -self.circle_y_factor
 
         #draw the circle
         circle_color = (255, 0, 0)
